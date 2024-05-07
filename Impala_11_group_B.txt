@@ -1,0 +1,22 @@
+vm workstation 7-> open vm-> cloudera file start -> go to terminal -> type "impala-shell" -> start sql commands as--
+
+CREATE DATABASE T1;
+
+USE T1;
+
+CREATE TABLE person (
+    id INT,
+    name STRING,
+    age INT
+);
+
+INSERT INTO person VALUES
+    (1, 'John', 25),
+    (2, 'Alice', 30),
+    (3, 'Bob', 28);
+
+SELECT * FROM person;
+
+DROP TABLE person;
+
+DROP DATABASE T1;

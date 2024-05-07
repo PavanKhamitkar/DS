@@ -1,0 +1,30 @@
+cmd -> type "spark-shell"-> Done🙂
+
+Now we can run commands in it
+
+val df = spark.read.format("csv").option("header",true).load("E:\\Class\\Data  Science\\code\\IRIS.csv")
+(to read csv in spark)
+
+df.show()
+(to show content inside of csv)
+
+val df = Seq((1,"stark",88.0),(2,"Om",99.0)).toDF("Sr","Name","Marks")
+(create new table)
+
+here if I take "Sr." as column name then type "`Sr.`" in field name
+
+println("hello" + variavle_name) ----- print statement
+
+val filter = df.filter($"Marks">20) ---- show marks greater than 20
+
+val sum_show = df.groupBy("Name").agg(sum("Marks").alias("Total_marks") , sum(Sr).alias("Total_sr")) --- show common table
+
+val maxV = df.agg(max("Marks")).first().getDouble(0) ---- show max value
+
+val minV = df.agg(min("Marks")).first().getDouble(0) --- show min value
+
+val avgV = df.agg(avg("Marks")).first().getDouble(0) --- avg show
+
+val std_dev = df.agg(stddev("Marks")).first().getDouble(0)  -- get standard deviation
+
+val sort_col = df.sort($"Marks".desc) --- sort in descending order
